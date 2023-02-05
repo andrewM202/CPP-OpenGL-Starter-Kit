@@ -15,6 +15,10 @@ int main() {
     Camera camera(window.GetResolution().x, window.GetResolution().y, glm::vec3(0.0f, 0.0f, 0.0f)); // Camera width, camera height, camera starting position
     Player player;
 
+    // Enable blending for transparent blocks
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
     // Render Loop
     while (!glfwWindowShouldClose(window.GetWindow()))
     {

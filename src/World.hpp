@@ -4,6 +4,7 @@
 #include "VBO.hpp"
 #include "EBO.hpp"
 #include "ShaderManager.hpp"
+#include "Texture.hpp"
 
 #include <GLFW/glfw3.h>
 
@@ -16,6 +17,9 @@ public:
     VAO TileVAO;
     VBO TileVBO;
     EBO TileEBO;
+
+    // Our textures
+    Texture grassBlockTop{"../src/resources/textures/ground_top_512.png"};
 
     // Singleton Design
     static World &Instance()
@@ -31,6 +35,8 @@ public:
 
     // Run the event loop once
     void RunLoop(GLFWwindow *window);
+    // Activate textures
+    void ActivateTextures();
 };
 
 
