@@ -3,6 +3,7 @@ This example uses openGL [4.3](https://www.khronos.org/opengl/wiki/History_of_Op
 This project starts out with a basic vertex and fragment shader, and the necessary helper files. It starts out by drawing a small grid of textured cubes to the screen
 
 ### Source files
+- Main.cpp : The entrypoint for the app, and where the OpenGL event loop is ran and classes are initialized
 - Camera.hpp : Can be setup to handle model, view, projection matrices
 - EBO.hpp : Helper class to generate Index buffer objects
 - VBO.hpp : Helper class to generate Vertex buffer objects
