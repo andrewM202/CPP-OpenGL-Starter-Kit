@@ -15,7 +15,6 @@ WindowManager::WindowManager()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     // The profile is the package of functions openGL provides
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    // glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_COMPAT_PROFILE); 
 
     // If this is macos then we need to enable forward compatibility
     #ifdef __APPLE__
