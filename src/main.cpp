@@ -1,38 +1,31 @@
+#include "WindowManager.hpp"
+#include "World.hpp"
+#include "WorldConstants.hpp"
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
- 
 #include <iostream>
  
 int main() {
-    glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
- 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "this is NOT a window!", NULL, NULL);
-    if (window == NULL) {
-        std::cout << "Failed to create GLFW window" << std::endl;
-        glfwTerminate();
-        return -1;
+    // Initialize Classes
+    WindowManager &window = WindowManager::Instance();
+    World &world = World::Instance();
+
+    // Render Loop
+    while (!glfwWindowShouldClose(window.GetWindow()))
+    {
+        glClearColor(WorldVars::skyColor.x, WorldVars::skyColor.y, WorldVars::skyColor.z, WorldVars::skyColor.w);
+        // Error logging
+        window.CheckErrors();
+        // Set FPS and camera coordinates to GLFW window title
+        window.SetWindowTitle("FPS: " + std::to_string(window.GetFPS()));
+
+        // Test draw something
+        world.RunLoop(window.GetWindow());
+
+        // Last in while loop, clear the buffers and poll events, setting up window for next frame
+        window.setupNextFrame();
     }
- 
-    glfwMakeContextCurrent(window);
- 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-        std::cout << "Failed to initialize GLAD" << std::endl;
-        return -1;
-    }
- 
-    while (!glfwWindowShouldClose(window)) {
-        
-        glfwPollEvents();
- 
-        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
- 
-        glfwSwapBuffers(window);
-    }
- 
-    glfwTerminate();
+
     return 0;
 }
