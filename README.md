@@ -24,7 +24,7 @@ This project starts out with a basic vertex and fragment shader, and the necessa
 
 #### Setup the project on windows using:
 1. [How to install OpenGL for C++ (Windows)](https://www.youtube.com/watch?v=hRInLNR9iRg)
-2. [https://www.youtube.com/watch?v=oQHdm6TpLsU](https://www.youtube.com/watch?v=oQHdm6TpLsU)
+2. [Installing MinGW Compiler for VSCode on Win 10 x64](https://www.youtube.com/watch?v=oQHdm6TpLsU)
 
 
 
