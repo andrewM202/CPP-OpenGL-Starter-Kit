@@ -2,7 +2,7 @@ This example uses openGL [4.3](https://www.khronos.org/opengl/wiki/History_of_Op
 
 ![alt text](example.png "Example Output")
 
-This project starts out with a basic vertex and fragment shader, and the necessary helper files. It starts out by drawing a small grid of textured cubes to the screen
+This project starts out with a basic vertex and fragment shader, and the necessary helper files. It starts out by drawing a small grid of textured squares to the screen
 
 ### Source files
 - Main.cpp : The entrypoint for the app, and where the OpenGL event loop is ran and classes are initialized
